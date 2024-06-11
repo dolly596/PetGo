@@ -31,10 +31,6 @@ public class ConsultaService {
 		return ConsultaRepository.findByDescricao(descricao);
 	}
 	//@query
-	public List <Consulta> ProcuraHora (String hora) {
-		return ConsultaRepository.findByHora(hora);
-	}
-	//@query
 		public List <Consulta> ProcuraData (String data) {
 			return ConsultaRepository.findByData(data);
 		} 

@@ -52,12 +52,17 @@ public class ConsultaController {
 		public List<Consulta> FindPorHora(@PathVariable String hora){
 			return ConsultaService.BuscarPorHora(hora);
 		}
-		/*@GetMapping("/nome/{nome}")
-		public ResponseEntity<List<Consulta>> buscarConsultasPorNomeControl(@PathVariable String nome){
-			List<Consulta> Consulta = ConsultaService.buscarConsultasPorNome(nome);
+		@GetMapping("/descricao/{descricao}")
+		@Operation(summary = "Localiza uma consulta por descricao")
+		public List<Consulta> FindbyDescricao(@PathVariable String descricao){
+			return ConsultaService.ProcuraDescricao(descricao);
+		}
+		@GetMapping("/data/{data}")
+		@Operation(summary = "Consulta todas as consultas por data")
+		public ResponseEntity<List<Consulta>> buscarConsultasPorDataControl(@PathVariable String data){
+			List<Consulta> Consulta = ConsultaService. ProcuraData(data);
 			return ResponseEntity.ok(Consulta);
 		}
-		*/
 		
 		@GetMapping("/")
 		@Operation(summary = "Apresenta todas as consultas")

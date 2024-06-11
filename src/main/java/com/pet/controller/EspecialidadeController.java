@@ -21,8 +21,6 @@ import com.pet.service.EspecialidadeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-
-
 @Tag(name = "especialidade", description = "API REST DE GERENCIAMENTO DE especialidade")
 @RestController
 @CrossOrigin(origins = "*")

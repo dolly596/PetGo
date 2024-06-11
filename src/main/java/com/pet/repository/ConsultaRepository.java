@@ -10,10 +10,12 @@ import com.pet.entities.Consulta;
 
 
 public interface ConsultaRepository extends JpaRepository<Consulta,Long> {
-	List<Consulta> findByHora(String hora);
+
 	@Query("SELECT a FROM Consulta a WHERE a.descricao = :descricao")
-	
 	List<Consulta> findByDescricao(@Param("descricao") String descricao);
+	
+	@Query("SELECT a FROM Consulta a WHERE a.hora = :hora")
+	List<Consulta> findByHora(@Param("hora") String hora);
 	
 	@Query("SELECT a FROM Consulta a WHERE a.data = :data")
 	List<Consulta> findByData (@Param("data") String data);
